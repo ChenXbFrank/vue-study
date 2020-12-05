@@ -1,17 +1,14 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" style="width: 100px; height: 100px" src="./assets/logo.png">
-    <UserInfo msg="Welcome to Your Vue.js App"/>
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
-import UserInfo from './components/UserInfo.vue'
 
 export default {
   name: 'App',
   components: {
-    UserInfo
   }
 }
 </script>

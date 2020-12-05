@@ -1,6 +1,7 @@
 <template>
   <div>
     <h1>使用element-ui的表格</h1>
+     <el-button type="primary" @click="jumpHome">返回首页</el-button>
     <el-table
       :data="tableData"
       style="width: 100%">
@@ -50,9 +51,10 @@ export default {
 
       saveUser() {
         let user = {
-          name: '趵突泉',
-          date: '2020-10-10',
-          address: '山东省济南市趵突泉街101号'
+          // todo 如果使用post方法，则放开下面的注释
+          // name: '趵突泉',
+          // date: '2020-10-10',
+          // address: '山东省济南市趵突泉街101号'
         };
         
         this.$http({
@@ -68,6 +70,9 @@ export default {
         }).catch(err => {
             console.log("插入数据失败:", err);
         })
+      },
+      jumpHome() {
+        this.$router.push("/index");
       }
 
     },
