@@ -21,10 +21,13 @@
       </el-table-column>
     </el-table>
     <h2>总共获取{{count}}条数据</h2>
+    <h3>{{userInfo}}</h3>
   </div>
 </template>
 
 <script>
+
+import { mapState } from 'vuex'
 
 export default {
   name: 'UserInfo',
@@ -81,23 +84,16 @@ export default {
       this.getUserInfo();
       this.saveUser();
     },
+
+    computed: {
+      ...mapState({
+        userInfo:  state => state.UserInfo.stateB
+      })
+    }
 }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h3 {
-  margin: 40px 0 0;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
-}
+
 </style>

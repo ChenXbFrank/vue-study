@@ -1,5 +1,5 @@
 const state = {
-    stateA: 'A'
+    stateA: '首页的state'
   }
   
   const mutations = {
@@ -18,9 +18,5 @@ const state = {
     getA (state) {
       return state.stateA
     }
-  
   }
-  
-   
-  
   export default {state, mutations, actions, getters}

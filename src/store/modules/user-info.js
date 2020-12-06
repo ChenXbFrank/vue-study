@@ -1,21 +1,21 @@
 const state = {
-    stateB: 'B'
+    stateB: '用户列表的state'
   }
   
   const mutations = {
-    showA (state) {
+    showB (state) {
       return state.stateB
     }
   }
   
   const actions = {
-    showAAction (context) {
+    showBAction (context) {
       context.commit('showB')
     }
   }
   
   const getters = {
-    getA (state) {
+    getB (state) {
       return state.stateB
     }
   }
