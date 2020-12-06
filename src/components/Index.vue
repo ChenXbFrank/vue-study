@@ -2,22 +2,26 @@
   <div>
     <h1>首页</h1>
     <el-button type="primary" @click="jumpUserInfo" style="margin-bottom: 25px">查看用户列表</el-button>
-    <el-carousel indicator-position="outside">
+    <el-carousel indicator-position="outside" :interval="1000">
       <el-carousel-item v-for="item in recordList" :key="item">
         <h3>{{ item }}</h3>
       </el-carousel-item>
     </el-carousel>
 
-    <el-carousel :interval="3000" type="card" height="200px">
+    <el-carousel :interval="1000" type="card" height="200px">
       <el-carousel-item v-for="item in imagebox" :key="item.id">
         <img :src="item.idView" class="image">
         <span>{{item.text}}</span>
       </el-carousel-item>
     </el-carousel>
+
+    <h2>{{index}}</h2>
   </div>
 </template>
 
 <script>
+
+import { mapState } from 'vuex'
 
 export default {
   name: 'Index',
@@ -64,6 +68,11 @@ export default {
     mounted() {
      
     },
+    computed: {
+      ...mapState({
+        index:  state => state.Index.stateA
+    })
+    }
 }
 </script>
 
